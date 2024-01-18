@@ -11,20 +11,23 @@ const PORT = process.env.PORT || 3000;
 
 //Put Middleware for parsing JSON and urlencoded form data 
 app.use(express.json());
-app.use(express.urlencoded({extened: true}));
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static('public'));
+
 
 //Make GET route for homepage from public 
 
 app.get('/', (req,res) =>{
-    res.sendFile(path.join(__dirname, './public/index.html'));
+    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
 });
 
 //GET  route for notes page 
 
-app.get('/notes', (res, req) => {
-    res.sendFile(path.join(__dirname, './public/notes.html'));
-});
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, './Develop/public/notes.html'));
+  });
+  
 
 //API routes 
 // Make a GET request to read the db.json and return the saved Notes to the user 
