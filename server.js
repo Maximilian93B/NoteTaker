@@ -30,8 +30,26 @@ app.get('/notes', (res, req) => {
 // Make a GET request to read the db.json and return the saved Notes to the user 
 
 app.get('/api/notes', (req,res)=>{
-fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+ const newNote = req.body;
+// include UUID 
+    
+    fs.readFile('./db/db.json', 'utf-8', (err, data) => {
     if (err) throw err;
-    res.json(JSON.parse(data));
+        res.json(JSON.parse(data));
+
+    
+        fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
+    if (err) throw err;
+    res.json(newNote);
+    });
+ });
+
 });
+
+
+// Start Server on PORT 
+
+app.listen(PORT, () => {
+    console.log ('There is a new Cook in the Kitchen ${PORT}')
 });
+
