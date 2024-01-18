@@ -3,6 +3,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const { stringify } = require('querystring');
 
 
 //init express and PORT 
@@ -37,15 +38,22 @@ app.get('/api/notes', (req,res)=>{
  const newNote = req.body;
 // include UUID 
     
-    fs.readFile('./db/db.json', 'utf-8', (err, data) => {
-    if (err) throw err;
-        res.json(JSON.parse(data));
+    fs.readFile('./Develop/db/db.json', 'utf-8', (readErr, data) => {
+    if (readErr) {
+        //handle error
+    } else {
 
-    
-        fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
-    if (err) throw err;
-    res.json(newNote);
-    });
+        let note = newNote.JSON.parse(data);
+
+        fs.writeFile('./Develop/db/db.json', JSON,stringify(notes), (writeErr)=>{
+            if(writeErr) {
+                throw writeErr;
+            } else {
+                // hanlde success 
+            }
+        })
+    }
+       
  });
 
 });
