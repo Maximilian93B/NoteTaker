@@ -19,3 +19,19 @@ app.use(express.static('public'));
 app.get('/', (req,res) =>{
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
+
+//GET  route for notes page 
+
+app.get('/notes', (res, req) => {
+    res.sendFile(path.join(__dirname, './public/notes.html'));
+});
+
+//API routes 
+// Make a GET request to read the db.json and return the saved Notes to the user 
+
+app.get('/api/notes', (req,res)=>{
+fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+    if (err) throw err;
+    res.json(JSON.parse(data));
+});
+});
