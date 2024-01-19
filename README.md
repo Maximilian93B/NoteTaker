@@ -46,7 +46,7 @@ This project mainly focused on debugging and connecting back end functionality t
 
    ![DELETE Request Code Snippet](./Assets/Screenshot%202024-01-18%20230848.png)
 
-   *This snippet showcases the DELETE route used to remove a specific note. We ensured the correct extraction of note IDs and proper handling of file operations.*
+   *This snippet showcases the DELETE route used to remove a specific note. It ensures the correct extraction of note IDs and proper handling of file ops.*
 
 4. **Error Handling**: I added some error handling but nothing crazy, just enough to see if ther was any JSON issues res.status(500)ish stuff.
 
