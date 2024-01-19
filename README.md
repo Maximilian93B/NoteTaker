@@ -1,7 +1,7 @@
 # NoteTaker
 
 ## Live Demo
-[![Alt text](image.png)]()
+[![Alt text](./Assets/11-express-homework-demo.gif)]()
 
 ## Table of Contents
 - [Live Demo](#live-demo)
@@ -32,22 +32,22 @@ The NoteTaker project is a full-stack application designed for efficient note ma
 
 ## The Process
 
-This project mainly focused on debugging and connecting back end functionality to a pre exsisting Front-end files. Nothing Crazy, just needed to go through the process. I will explain more below.  
+This project mainly focused on debugging and connecting back end functionality to pre exsisting Front-end files. Nothing Crazy, just needed to go through the process. I will explain more below.  
 
 1. **Static File Serving**: The initial problem was with the static file serving. I started by ensuring that the Express.js server was set up to serve static files. This meant configuring the server to deliver the appropriate public files to the user.
 
-2. **API Endpoint Creation**: Next, I Focused on the API Endpoints, Most of witch just had to be GET and POST, although i added a DELETE but we will get to that later. I ran into some path issues but i re arranged some of the files in the front end and changed the routes and voila! 
+2. **API Endpoint Creation**: Next, I Focused on the API Endpoints, Most of witch just had to be GET and POST, although i added a DELETE but we will get to that later. I ran into some path issues but after moving around some of the files in the front end and changing the routes we got it! voila!! 
 
-3. **Implementing DELETE Functionality**: The front end had a delete feature but it was connected to the backend. So of ofourse we connected it, using uuids , i was able to assign each note a specific id and then call on that id to be deleted from the db. 
+3. **Implementing DELETE Functionality**: The front end had a delete feature but it was not connected to the backend. So of course we connected it, using uuids I was able to assign each note a specific id and then call on that id to be deleted from the db. 
 
-   ![DELETE Request Code Snippet](link-to-image)
+   ![DELETE Request Code Snippet](./Assets/Screenshot%202024-01-18%20230848.png)
 
    *This snippet showcases the DELETE route used to remove a specific note. We ensured the correct extraction of note IDs and proper handling of file operations.*
 
-4. **Error Handling**: I added some error handling but nothign crazy, just enough to see if ther was any JSON issues res.status(500)ish stuff.
+4. **Error Handling**: I added some error handling but nothing crazy, just enough to see if ther was any JSON issues res.status(500)ish stuff.
 
 
-If you have managed to read this far i really appreciate it. THanks for letting me showcase my skills to you, Happy Coding! 
+If you have managed to read this far I really appreciate it. THanks for letting me showcase my skills to you, Happy Coding! 
 
 
 ## Contact
