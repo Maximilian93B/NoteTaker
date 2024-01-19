@@ -3,8 +3,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const { stringify } = require('querystring');
-
+const uuid = require('uuid') 
 
 //init express and PORT 
 const app = express();
@@ -35,33 +34,22 @@ app.get('/notes', (req, res) => {
 // Make a GET request to read the db.json and return the saved Notes to the user 
 
 app.get('/api/notes', (req,res)=>{
- const newNote = req.body;
-// include UUID 
-    
-    fs.readFile('./Develop/db/db.json', 'utf-8', (readErr, data) => {
-    if (readErr) {
-        //handle error
+ fs.readFile('./Develop/db/db.json', 'utf-8', (err, data)=>{
+    if (err) {
+        res.status(500).send('Error reading the file');
     } else {
-
-        let note = newNote.JSON.parse(data);
-
-        fs.writeFile('./Develop/db/db.json', JSON,stringify(notes), (writeErr)=>{
-            if(writeErr) {
-                throw writeErr;
-            } else {
-                // hanlde success 
-            }
-        })
+        res.json(JSON.parse(data));
     }
-       
  });
-
+// Start Server on PORT 
 });
 
-
-// Start Server on PORT 
+app.post('api/notes', (req,res) => {
+    //logic for POST request 
+})
 
 app.listen(PORT, () => {
-    console.log ('There is a new Cook in the Kitchen ${PORT}')
+    console.log(`There is a new Cook in the Kitchen ${PORT}`);
+
 });
 
