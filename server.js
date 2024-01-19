@@ -34,20 +34,24 @@ app.get('/notes', (req, res) => {
 // Make a GET request to read the db.json and return the saved Notes to the user 
 
 app.get('/api/notes', (req,res)=>{
- fs.readFile('./Develop/db/db.json', 'utf-8', (err, data)=>{
-    if (err) {
-        res.status(500).send('Error reading the file');
-    } else {
+    fs.readFile('./Develop/db/db.json', 'utf-8', (err, data) =>{
+        if (err) {
+            // send error response 
+            res.status(500).json({message: 'Error reading notes'});
+        } else {
+
         res.json(JSON.parse(data));
-    }
- });
-// Start Server on PORT 
+        }
+    });
+
 });
 
 app.post('api/notes', (req,res) => {
     //logic for POST request 
 })
 
+
+// Start Server and set listener on PORT 
 app.listen(PORT, () => {
     console.log(`There is a new Cook in the Kitchen ${PORT}`);
 
