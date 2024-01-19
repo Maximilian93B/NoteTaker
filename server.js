@@ -46,9 +46,27 @@ app.get('/api/notes', (req,res)=>{
 
 });
 
-app.post('api/notes', (req,res) => {
-    //logic for POST request 
-})
+
+app.post('/api/notes', (req, res) => {
+    const newNote = { ...req.body, id: uuid.v4() }; // Add a unique ID to the new note
+
+    fs.readFile('./Develop/db/db.json', 'utf-8', (readErr, data) => {
+        if (readErr) {
+            res.status(500).json({ message: "Error reading notes" });
+        } else {
+            let notes = JSON.parse(data);
+            notes.push(newNote); // Add the new note to the array
+
+            fs.writeFile('./Develop/db/db.json', JSON.stringify(notes), (writeErr) => {
+                if (writeErr) {
+                    res.status(500).json({ message: "Error writing notes" });
+                } else {
+                    res.json(newNote); // Send back the new note
+                }
+            });
+        }
+    });
+});
 
 
 // Start Server and set listener on PORT 
