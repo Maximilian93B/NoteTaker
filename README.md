@@ -1,5 +1,9 @@
 # NoteTaker
 
+## Live Url
+[]
+
+
 ## Live Demo
 [![Alt text](./Assets/11-express-homework-demo.gif)]()
 
@@ -36,9 +40,9 @@ This project mainly focused on debugging and connecting back end functionality t
 
 1. **Static File Serving**: The initial problem was with the static file serving. I started by ensuring that the Express.js server was set up to serve static files. This meant configuring the server to deliver the appropriate public files to the user.
 
-2. **API Endpoint Creation**: Next, I Focused on the API Endpoints, Most of witch just had to be GET and POST, although i added a DELETE but we will get to that later. I ran into some path issues but after moving around some of the files in the front end and changing the routes we got it! voila!! 
+2. **API Endpoint Creation**: Next, I Focused on the API Endpoints 'GET' and 'POST' although I added a 'DELETE' but we will get to that later. I ran into some path issues but after moving around some of the files in the front-end and changing the routes we got it! Voila!! 
 
-3. **Implementing DELETE Functionality**: The front end had a delete feature but it was not connected to the backend. So of course we connected it, using uuids I was able to assign each note a specific id and then call on that id to be deleted from the db. 
+3. **Implementing DELETE Functionality**: The front-end had a delete feature but it was not connected to the backend. So of course we connected it, using uuids I was able to assign each note a specific id and then call on that id to be deleted from the db. 
 
    ![DELETE Request Code Snippet](./Assets/Screenshot%202024-01-18%20230848.png)
 
