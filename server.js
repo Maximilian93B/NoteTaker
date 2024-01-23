@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const uuid = require('uuid') 
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 
 //Iinit express and set PORT -- > if not using enviroment port use 3000
