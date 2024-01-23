@@ -4,6 +4,8 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const uuid = require('uuid') 
+const nodeVariable = require('dotenv').config();
+
 
 //Iinit express and set PORT -- > if not using enviroment port use 3000
 const app = express();
@@ -102,7 +104,7 @@ app.delete('/api/notes/:id', (req, res) => {
 
 // Start Server and set listener on PORT 
 app.listen(PORT, () => {
-    console.log(`There is a new Cook in the Kitchen ${PORT}`);
+    console.log(`There is a new Cook in the Kitchen${PORT}`);
 
 });
 
