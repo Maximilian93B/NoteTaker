@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const uuid = require('uuid') 
-const nodeVariable = require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 
 //Iinit express and set PORT -- > if not using enviroment port use 3000
@@ -75,7 +75,7 @@ app.post('/api/notes', (req, res) => {
 });
 
 
-// Make DELETE request adn then use params to call the id of the note to delete
+// Make DELETE request and then use params to call the id of the note to delete
 
 app.delete('/api/notes/:id', (req, res) => {
 
